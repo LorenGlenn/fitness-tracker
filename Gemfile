@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'materialize-sass'
 gem "simple_calendar"
+gem 'factory_girl_rails'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -19,6 +21,11 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'simplecov', :require => false, :group => :test
+  gem 'database_cleaner'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
 
 group :development do
