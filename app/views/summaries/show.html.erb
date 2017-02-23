@@ -8,11 +8,9 @@
     <div class="card" id="intake-link">
       <h5>Calorie Intake: <%= @summary.consumed %></h5>
       <%= link_to "Add Meal", new_summary_food_path(@summary), remote: true%>
-      <div class="food-list">
-        <% @foods.each do |f| %>
-        Food: <%= f.name %> <br>
-        Calories: <%= f.calorie_intake %>
-        <hr>
+      <div id="food-list">
+        <% @foods.each do |food| %>
+          <%= render("foods/food", food: food) %>
         <% end %>
       </div>
     </div>
