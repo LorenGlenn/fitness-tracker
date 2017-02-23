@@ -9,6 +9,7 @@ class FoodsController < ApplicationController
     @summary = Summary.find(params[:summary_id])
     @food = @summary.foods.create(food_params)
     @summary.total += @food.calorie_intake
+    @summary.consumed += @food.calorie_intake
     @summary.save
     respond_to  do |format|
         format.html { redirect_to user_summary_path(current_user.id, @summary.id) }

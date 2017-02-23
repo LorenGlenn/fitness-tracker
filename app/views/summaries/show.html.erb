@@ -5,9 +5,8 @@
     <%= render("summary", summary: @summary) %>
   </div>
   <div class="col s5">
+    <h5>Calorie Intake</h5>
     <div class="card" id="intake-link">
-      <h5>Calorie Intake: <%= @summary.consumed %>
-      </h5>
       <%= link_to "Add Meal", new_summary_food_path(@summary), remote: true%>
       <div id="food-list">
         <% @foods.each do |food| %>
@@ -18,7 +17,7 @@
   </div>
   <div class="col s5">
     <div class="card" id="burn-link">
-      <h5>Calories Burned: <%= @summary.burned %></h5>
+      <h5>Calories Burned</h5>
       <%= link_to "Add Exercise", new_summary_exercise_path(@summary), remote: true%>
       <div id="exercise-list">
         <% @exercises.each do |ex| %>

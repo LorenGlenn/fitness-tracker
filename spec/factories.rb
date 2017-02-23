@@ -4,11 +4,10 @@ FactoryGirl.define do
     password('123456')
   end
 
-  # factory :summary do
-  #   user = User.create(email: 'cb@gmail.com', password: '123123')
-  #   user
-  #   date('2017-01-22')
-  # end
+  factory :summary do
+    user
+    date('2017-01-30')
+  end
   #
   # factory :exercise do
   #   workout('run')
