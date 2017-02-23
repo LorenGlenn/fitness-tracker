@@ -1,0 +1,14 @@
+// Place all the styles related to the days controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.day {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-bottom: 150px;
+  padding-right: 60px;
+}
+
+.view-button {
+  text-align: center;
+}

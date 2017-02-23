@@ -1,0 +1,25 @@
+<h1> <%= @summary.date.to_formatted_s(:short) %> </h1>
+
+<div class="row">
+  <div class="col s10 card">
+    <h5>Net Calories:</h5>
+  </div>
+  <div class="col s5">
+    <div class="card" id="intake-link">
+      <h5>Calorie Intake: <%= @summary.consumed %></h5>
+      <%= link_to "Add Meal", new_summary_food_path(@summary), remote: true%>
+      <div class="food-list">
+        <% @foods.each do |f| %>
+        Food: <%= f.name %> <br>
+        Calories: <%= f.calorie_intake %>
+        <hr>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col s5">
+    <div class="card">
+      <h5>Calories Burned: <%= @summary.burned %></h5>
+    </div>
+  </div>
+</div>
