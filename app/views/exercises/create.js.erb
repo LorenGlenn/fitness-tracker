@@ -1,0 +1,4 @@
+$('#new_exercise').remove();
+$('#burn-link').show();
+$('#exercise-list').prepend('<%= j render(@exercise) %>');
+$('#total').html('<%= j render(@summary) %>');

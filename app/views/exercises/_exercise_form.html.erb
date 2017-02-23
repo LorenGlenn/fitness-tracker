@@ -1,0 +1,7 @@
+<%= form_for [@summary, @exercise], remote: true do |f| %>
+  <%= f.label :workout %>
+  <%= f.text_field :workout %>
+  <%= f.label :calorie_burn %>
+  <%= f.text_field :calorie_burn %>
+  <%= f.submit %>
+<% end %>

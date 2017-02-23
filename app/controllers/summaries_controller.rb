@@ -17,7 +17,12 @@ class SummariesController < ApplicationController
   def show
     @summary = Summary.find(params[:id])
     @foods = @summary.foods
+    @summary.total = 0
     @exercises = @summary.exercises
+    respond_to  do |format|
+        format.html {  }
+        format.js
+      end
   end
 
   def edit

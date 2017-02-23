@@ -1,14 +1,14 @@
-class FoodsController < ApplicationController
+class ExercisesController < ApplicationController
 
   def new
     @summary = Summary.find(params[:summary_id])
-    @food = Food.new
+    @exercise = Exercise.new
   end
 
   def create
     @summary = Summary.find(params[:summary_id])
-    @food = @summary.foods.create(food_params)
-    @summary.total += @food.calorie_intake
+    @exercise = @summary.exercises.create(exercise_params)
+    @summary.total -= @exercise.calorie_burn
     @summary.save
     respond_to  do |format|
         format.html { redirect_to user_summary_path(current_user.id, @summary.id) }
@@ -17,7 +17,7 @@ class FoodsController < ApplicationController
   end
 
   private
-  def food_params
-    params.require(:food).permit(:name, :calorie_intake, :summary_id)
+  def exercise_params
+    params.require(:exercise).permit(:workout, :calorie_burn, :summary_id)
   end
 end

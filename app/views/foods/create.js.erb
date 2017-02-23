@@ -1,3 +1,4 @@
 $('#new_food').remove();
 $('#intake-link').show();
 $('#food-list').prepend('<%= j render(@food) %>');
+$('#total').html('<%= j render(@summary) %>');
